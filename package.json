@@ -4,7 +4,8 @@
   "description": "Project to learn Kafka",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,11 @@
   "homepage": "https://github.com/rickrribeiro/Kafka_Chat#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "ejs-locals": "^1.0.2",
     "express": "^4.17.1",
     "kafka-node": "^5.0.0",
-    "kafkajs": "^1.15.0"
+    "kafkajs": "^1.15.0",
+    "nodemon": "^2.0.14"
   }
 }

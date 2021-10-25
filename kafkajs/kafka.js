@@ -6,7 +6,8 @@ console.log(process.env.TOPIC)
 
 const kafka = new Kafka({
   clientId: 'my-app',
-  brokers: [process.env.KAFKA_BOOTSTRAP_SERVER]
+  brokers: [process.env.KAFKA_BOOTSTRAP_SERVER],
+ 
 })
 
 const producer = kafka.producer()
@@ -17,7 +18,7 @@ async function main(){
   await producer.send({
     topic: process.env.TOPIC,
     messages: [
-      { value: 'Hello KafkaJS user!' },
+      { value: 'A mensagem chegou' },
     ],
   })
   

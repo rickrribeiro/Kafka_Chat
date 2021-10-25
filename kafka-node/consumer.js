@@ -6,7 +6,7 @@ const consumerOptions = {
     kafkaHost:  process.env.KAFKA_BOOTSTRAP_SERVER,
     groupId: process.env.GROUP_ID,
     sessionTimeout: 15000,
-    protocol: ['roundrobin'],
+    
     fromOffset: 'earliest' // equivalent of auto.offset.reset valid values are 'none', 'latest', 'earliest'
 };
 const topics = [process.env.TOPIC]
