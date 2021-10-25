@@ -1,5 +1,6 @@
 # Kafka_Chat
 App to learn Kafka
+Using KafkaJS and Socket.io
 ## To run: 
 ### 1. Install and cofigure kafka in a server
 ### 2. Create and configure .env - see .env.example

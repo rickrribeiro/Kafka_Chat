@@ -1,0 +1,16 @@
+ETL, which stands for extract, transform and load, is a data integration process that combines data from multiple data sources into a single, consistent data store that is loaded into a data warehouse or other target system
+
+The different data source send the data to Kafka and the kafka route the data to the others. If a data source can't receive the data, it stays in the kafka log file waiting for the connection to send.
+
+The message system can be divided in two types: point-to-point (the message is sent directly from a host to another) and publish-subscribe (An application publish and others subscribe to receive)
+
+advantages:
+    - scalability: the cluster can easily expanded
+    - distributed: the data processing is divided between different nodes
+    - replicated: the messages are replicated in the nodes to grant security and speed 
+    - availability: the cluster has many nodes and many copies of the data
+
+Zookeeper: store metadata ex: nodes location, names, topics and synchronize
+
+
+

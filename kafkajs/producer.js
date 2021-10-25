@@ -1,8 +1,6 @@
 const { Kafka } = require('kafkajs')
 require('dotenv').config()
 
-console.log(process.env.KAFKA_BOOTSTRAP_SERVER)
-console.log(process.env.TOPIC)
 
 const kafka = new Kafka({
   clientId: 'my-app',
@@ -12,16 +10,20 @@ const kafka = new Kafka({
 
 const producer = kafka.producer()
 
-async function main(){
-  console.log("main")
+async function sendMessage(sender, message, topic){
+
   await producer.connect()
   await producer.send({
-    topic: process.env.TOPIC,
+    topic: topic,//process.env.TOPIC,
     messages: [
-      { value: 'A mensagem chegou' },
+      { value: `{sender:"${sender}",message:"${message}"}` },
     ],
   })
   
   await producer.disconnect()
 }
-main()
+
+//sendMessage("Thales", "Massa!", "ricardothales")
+module.exports = {
+    sendMessage
+}
