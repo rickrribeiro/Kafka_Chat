@@ -17,7 +17,7 @@ const io = new Server(server);
 io.sockets.on('connection', (socket) => {
 
     socket.on('sendmessage', data =>{
-       // console.log(data)
+        console.log(data)
         const msg =JSON.parse(data)
         sendMessage(msg.sender, msg.message, process.env.TOPIC)
     })
@@ -28,7 +28,7 @@ io.sockets.on('connection', (socket) => {
 
 
 app.get('/', (req, res)=>{
-    //getMessage("ricardothales", io);
+    getMessage("quickstart", io);
     res.render('index')
 })
 

@@ -16,7 +16,7 @@ async function sendMessage(sender, message, topic){
   await producer.send({
     topic: topic,//process.env.TOPIC,
     messages: [
-      { value: `{sender:"${sender}",message:"${message}"}` },
+      { value: `{"sender":"${sender}","message":"${message}"}` },
     ],
   })
   

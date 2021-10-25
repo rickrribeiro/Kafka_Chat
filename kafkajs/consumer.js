@@ -11,9 +11,9 @@ const kafka = new Kafka({
 const consumer = kafka.consumer({groupId:process.env.GROUP_ID})
 
 async function getMessage(topic, socket){
-  
+  console.log("Conectando")
   await consumer.connect()
-  await consumer.subscribe({ topic: topic, fromBeginning: true, offset:0,autoCommit:false })
+  await consumer.subscribe({ topic: topic, fromBeginning: true})
   await consumer.run({
       eachMessage: async ({ topic, partition, message }) => {
           socket.emit('message', message.value.toString())
@@ -25,7 +25,7 @@ async function getMessage(topic, socket){
         },
     })
    
-    consumer.seek({ topic: topic, partition: 0, offset: 0 })
+    //consumer.seek({ topic: topic, partition: 0 })
     
 }
 
